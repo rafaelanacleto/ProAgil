@@ -1,0 +1,14 @@
+<p>
+  eventos works!
+</p>
+<br>
+<div class="container">
+  <div *ngFor="let evento of eventos">
+    <ul class="list-group">
+      <li class="list-group-item">Id: {{evento.eventoId}}</li>
+      <li class="list-group-item">Tema: {{evento.tema}}</li>
+      <li class="list-group-item">Local: {{evento.local}}</li>
+    </ul>
+    <br>
+  </div>
+</div>

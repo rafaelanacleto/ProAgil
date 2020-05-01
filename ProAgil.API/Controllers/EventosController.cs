@@ -25,13 +25,13 @@ namespace ProAgil.API.Controllers
         {
             try
             {
-               return Ok(await Context.Eventos.ToListAsync()); 
+                return Ok(await Context.Eventos.ToListAsync());
             }
             catch (System.Exception)
-            {                
+            {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
             }
-            
+
         }
 
         [HttpGet("{id}")]
@@ -39,14 +39,14 @@ namespace ProAgil.API.Controllers
         {
             try
             {
-               var results = await Context.Eventos.FirstOrDefaultAsync(x => x.EventoId == id);
-               return Ok(results); 
+                var results = await Context.Eventos.FirstOrDefaultAsync(x => x.EventoId == id);
+                return Ok(results);
             }
             catch (System.Exception)
-            {                
+            {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
             }
-            
+
         }
 
     }
