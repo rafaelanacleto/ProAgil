@@ -1,11 +1,41 @@
-<br>
 <div class="container">
-  <div *ngFor="let evento of eventos">
-    <ul class="list-group">
-      <li class="list-group-item">Id: {{evento.eventoId}}</li>
-      <li class="list-group-item">Tema: {{evento.tema}}</li>
-      <li class="list-group-item">Local: {{evento.local}}</li>
-    </ul>
-    <br>
+  <div class="row">
+    <form action="">
+      <div class="form-group mb-2">
+        <input type="text" class="form-control mr-2" placeholder="buscar">
+        <button class="btn-outline-success">Buscar</button>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tema</th>
+          <th scope="col">Local</th>
+          <th scope="col">Data</th>
+          <th scope="col">QTD Pessoas</th>
+          <th scope="col">Lote</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let evento of eventos">
+          <td>{{evento.eventoId}}</td>
+          <td>{{evento.tema}}</td>
+          <td>{{evento.local}}</td>
+          <td>{{evento.dataEvento}}</td>
+          <td>{{evento.qtd}}</td>
+          <td>{{evento.lote}}</td>
+          <td>
+            <button class="btn btn-success">Add</button>
+            <button class="btn btn-warning">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
+
+
