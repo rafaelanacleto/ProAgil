@@ -1,16 +1,28 @@
 <div class="container">
   <div class="row">
     <form action="">
-      <div class="form-group mb-2">
-        <input type="text" class="form-control mr-2" placeholder="buscar">
+      <div class="form-inline">
+        <input type="text"
+                [(ngModel)]="filtroList"
+                name="filtroList"
+                (ngModelChange)="filtroList = $event"
+                class="form-control mr-2"
+                placeholder="buscar">
         <button class="btn-outline-success">Buscar</button>
+        <h5>Filtro: {{filtroList}}</h5>
       </div>
     </form>
   </div>
+  <br>
   <div class="row">
     <table class="table table-dark">
       <thead>
         <tr>
+          <th scope="col">
+            <button class="btn btn-outline-danger btn-sm" (click) = "alternarImagem()">
+              Mostrar Imagem
+            </button>
+          </th>
           <th scope="col">#</th>
           <th scope="col">Tema</th>
           <th scope="col">Local</th>
@@ -20,20 +32,30 @@
           <th scope="col">Opções</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody *ngIf = "eventos && eventos.length">
         <tr *ngFor="let evento of eventos">
+          <td>
+              <img *ngIf="mostrarImagem" src="http://localhost:5000/img/{{evento.imagemUrl}}" style="width: 60px; height: 35px;">
+          </td>
           <td>{{evento.eventoId}}</td>
           <td>{{evento.tema}}</td>
           <td>{{evento.local}}</td>
           <td>{{evento.dataEvento}}</td>
           <td>{{evento.qtd}}</td>
-          <td>{{evento.lote}}</td>
+          <td>{{evento.lote | uppercase}}</td>
           <td>
             <button class="btn btn-success">Add</button>
             <button class="btn btn-warning">Excluir</button>
           </td>
         </tr>
       </tbody>
+      <tfoot>
+        <tr>
+          <td>
+             <h6>Quantidade de registros:  {{eventos.length}}</h6>
+          </td>
+        </tr>
+      </tfoot>
     </table>
   </div>
 </div>

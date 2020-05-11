@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rafae\\source\\repos\\dotnetcore\\ProAgil.API\\ProAgil.API.csproj": {}
+    "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rafae\\source\\repos\\dotnetcore\\ProAgil.API\\ProAgil.API.csproj": {
+    "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rafae\\source\\repos\\dotnetcore\\ProAgil.API\\ProAgil.API.csproj",
+        "projectUniqueName": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
         "projectName": "ProAgil.API",
-        "projectPath": "C:\\Users\\rafae\\source\\repos\\dotnetcore\\ProAgil.API\\ProAgil.API.csproj",
+        "projectPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
         "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rafae\\source\\repos\\dotnetcore\\ProAgil.API\\obj\\",
+        "outputPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

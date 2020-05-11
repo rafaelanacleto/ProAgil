@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UzvrxJkt87YaSV0Oin1aurs1PvWN/lctOIef1/pJR7K/fliT1/wgpORd7tOJW+gRWtdtEZIEAgPTMFF42d6z2w==",
+  "dgSpecHash": "KSjtxa8xaCF4ON8PYBtnyR4zd9q2rLDi1/JQPUyABH/xaircFTEXgrF7touBdbentowZYESThHgPLiSUwliyXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rafae\\source\\repos\\dotnetcore\\ProAgil.API\\ProAgil.API.csproj",
+  "projectFilePath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rafae\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\rafae\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
