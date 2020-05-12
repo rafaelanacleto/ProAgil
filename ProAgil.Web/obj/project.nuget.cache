@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HhEQrjR68wBx07wIVpk1EYc2IonKbkQQ20r0ri6cdh5ZA7kswPZx2tJeB6CH1e25Dy5+wcyyINwT3VNiFrzgVg==",
+  "dgSpecHash": "Sye54gfbKhWHASSNEgsHQ5Wbr7eHG5jBcwuk49k1u/uMRpZVwfUcm2mTVDe/ZK++xa1AJQsXyJh/3dRY9aQWHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rafae\\source\\repos\\dotnetcore\\ProAgil.Web\\ProAgil.Web.csproj",
+  "projectFilePath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Web\\ProAgil.Web.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

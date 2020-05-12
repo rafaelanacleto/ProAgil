@@ -116,3 +116,7 @@ C:\Users\rafae\source\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\staticwe
 C:\Users\rafae\source\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.dll
 C:\Users\rafae\source\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.pdb
 C:\Users\rafae\source\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.genruntimeconfig.cache
+C:\Users\rafae\source\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.Domain.dll
+C:\Users\rafae\source\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.Repository.dll
+C:\Users\rafae\source\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.Domain.pdb
+C:\Users\rafae\source\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.Repository.pdb
