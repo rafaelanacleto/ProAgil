@@ -193,6 +193,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0-preview.3.20181.2, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

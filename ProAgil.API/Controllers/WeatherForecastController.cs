@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProAgil.API.Data;
-using ProAgil.API.Model;
+using ProAgil.Domain;
 
 namespace ProAgil.API.Controllers
 {
