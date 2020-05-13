@@ -10,8 +10,8 @@ namespace ProAgil.Repository
         }
 
         public DbSet<Evento> Eventos { get; set; }
-        public DbSet<Palestrantes> Palestrantes { get; set; }
-        public DbSet<PalestranteEventos> PalestranteEventos { get; set; }
+        public DbSet<Palestrante> Palestrantes { get; set; }
+        public DbSet<PalestranteEvento> PalestranteEventos { get; set; }
         public DbSet<Lote> Lotes { get; set; }
         public DbSet<RedeSocial> RedeSociais { get; set; }
 
