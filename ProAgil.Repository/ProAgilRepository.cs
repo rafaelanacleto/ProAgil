@@ -1,23 +1,46 @@
+using System.Linq;
 using System.Threading.Tasks;
 using ProAgil.Domain;
+using System.Collections;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace ProAgil.Repository
 {
     public class ProAgilRepository : IProAgilRepository
     {
+        private readonly ProAgilContext _context;
+
+        public ProAgilRepository(ProAgilContext context)
+        {
+            this._context = context;
+        }
+
         void IProAgilRepository.Add<T>(T entity)
         {
-            throw new System.NotImplementedException();
+            _context.Add(entity);
         }
 
         void IProAgilRepository.Delete<T>(T entity)
         {
-            throw new System.NotImplementedException();
+            _context.Remove(entity);
         }
 
-        Task<Evento[]> IProAgilRepository.GetAllEventoAsync(bool includePalestrante)
+        public async Task<Evento[]> GetAllEventoAsync(bool includePalestrante = false)
         {
-            throw new System.NotImplementedException();
+            IQueryable<Evento> query = _context.Eventos
+                .Include(c => c.Lote)
+                .Include(c => c.RedesSociais);
+
+            if (includePalestrante)
+            {
+                query = query.Include(p => p.PalestranteEventos).ThenInclude(p => p.Palestrante);
+            }
+
+            query = query.OrderByDescending(c => c.DataEvento);
+
+            return await query.ToArrayAsync();
         }
 
         Task<Evento> IProAgilRepository.GetAllEventoAsyncById(int EventoID, bool includePalestrante)
@@ -40,14 +63,14 @@ namespace ProAgil.Repository
             throw new System.NotImplementedException();
         }
 
-        Task<bool> IProAgilRepository.SaveChangesAsync()
+        async Task<bool> IProAgilRepository.SaveChangesAsync()
         {
-            throw new System.NotImplementedException();
+            return (await _context.SaveChangesAsync()) > 0;
         }
 
         void IProAgilRepository.Update<T>(T entity)
         {
-            throw new System.NotImplementedException();
+            _context.Update(entity);
         }
     }
 }
