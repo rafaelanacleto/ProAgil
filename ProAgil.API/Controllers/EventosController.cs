@@ -13,9 +13,9 @@ namespace ProAgil.API.Controllers
     [Route("[controller]")]
     public class EventosController : ControllerBase
     {
-        public ProAgilContext Context { get; }
+        private IProAgilRepository Context { get; }
 
-        public EventosController(ProAgilContext context)
+        public EventosController(IProAgilRepository context)
         {
             this.Context = context;
         }
@@ -25,7 +25,7 @@ namespace ProAgil.API.Controllers
         {
             try
             {
-                return Ok(await Context.Eventos.ToListAsync());
+                return Ok(await Context.GetAllEventoAsync(true));
             }
             catch (System.Exception)
             {
@@ -39,7 +39,7 @@ namespace ProAgil.API.Controllers
         {
             try
             {
-                var results = await Context.Eventos.FirstOrDefaultAsync(x => x.Id == id);
+                var results = await Context.GetAllEventoAsyncById(id, true);
                 return Ok(results);
             }
             catch (System.Exception)
@@ -47,6 +47,98 @@ namespace ProAgil.API.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
             }
 
+        }
+
+        [HttpGet("getByTema{tema}")]
+        public async Task<IActionResult> Get(string tema)
+        {
+            try
+            {
+                var results = await Context.GetAllEventoAsyncByTema(tema, true);
+                return Ok(results);
+            }
+            catch (System.Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
+            }
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(Evento model)
+        {
+            try
+            {
+                Context.Add(model);
+
+                if (await Context.SaveChangesAsync())
+                {
+                    return Created($"eventos{model.Id}", model);
+                }
+
+            }
+            catch (System.Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
+            }
+
+            return BadRequest();
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(int EventoId, Evento model)
+        {
+            try
+            {
+                var evento = await Context.GetAllEventoAsyncById(EventoId, false);
+
+                if (evento == null)
+                {
+                    return NotFound();
+                }
+                
+                Context.Update(model);
+
+                if (await Context.SaveChangesAsync())
+                {
+                    return Created($"eventos{model.Id}", model);
+                }
+
+            }
+            catch (System.Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
+            }
+
+            return BadRequest();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int EventoId)
+        {
+            try
+            {
+                var evento = await Context.GetAllEventoAsyncById(EventoId, false);
+
+                if (evento == null)
+                {
+                    return NotFound();
+                }
+                
+                Context.Delete(evento);
+
+                if (await Context.SaveChangesAsync())
+                {
+                    return Created($"eventos{evento.Id}", evento);
+                }
+
+            }
+            catch (System.Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
+            }
+
+            return BadRequest();
         }
 
     }
