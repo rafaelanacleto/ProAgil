@@ -7,10 +7,10 @@ namespace ProAgil.Domain
     {
         public int Id { get; set; }
         public string Local { get; set; }
-        public DateTime DataEvento { get; set; }
+        public String DataEvento { get; set; }
         public string Tema { get; set; }
         public int Qtd { get; set; }
-        public List<Lote> Lote { get; set; }
+        public List<Lote> Lotes { get; set; }
         public string ImagemUrl { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
