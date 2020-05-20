@@ -27,9 +27,9 @@ namespace ProAgil.API.Controllers
             {
                 return Ok(await Context.GetAllEventoAsync(true));
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API - " +  ex.Message);
             }
 
         }

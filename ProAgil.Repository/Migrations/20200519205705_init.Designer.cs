@@ -9,7 +9,7 @@ using ProAgil.Repository;
 namespace ProAgil.Repository.Migrations
 {
     [DbContext(typeof(ProAgilContext))]
-    [Migration("20200513111100_init")]
+    [Migration("20200519205705_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace ProAgil.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("DataEvento")
+                    b.Property<string>("DataEvento")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -146,13 +146,13 @@ namespace ProAgil.Repository.Migrations
 
                     b.HasIndex("PalestranteId");
 
-                    b.ToTable("RedeSociais");
+                    b.ToTable("RedesSociais");
                 });
 
             modelBuilder.Entity("ProAgil.Domain.Lote", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Evento", "Evento")
-                        .WithMany("Lote")
+                    b.HasOne("ProAgil.Domain.Evento", null)
+                        .WithMany("Lotes")
                         .HasForeignKey("EventoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -175,11 +175,11 @@ namespace ProAgil.Repository.Migrations
 
             modelBuilder.Entity("ProAgil.Domain.RedeSocial", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Evento", "Evento")
+                    b.HasOne("ProAgil.Domain.Evento", null)
                         .WithMany("RedesSociais")
                         .HasForeignKey("EventoId");
 
-                    b.HasOne("ProAgil.Domain.Palestrante", "Palestrante")
+                    b.HasOne("ProAgil.Domain.Palestrante", null)
                         .WithMany("RedesSociais")
                         .HasForeignKey("PalestranteId");
                 });
