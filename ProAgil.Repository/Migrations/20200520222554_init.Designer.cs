@@ -9,7 +9,7 @@ using ProAgil.Repository;
 namespace ProAgil.Repository.Migrations
 {
     [DbContext(typeof(ProAgilContext))]
-    [Migration("20200519205705_init")]
+    [Migration("20200520222554_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace ProAgil.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("DataEvento")
+                    b.Property<DateTime>("DataEvento")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -36,7 +36,7 @@ namespace ProAgil.Repository.Migrations
                     b.Property<string>("Local")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Qtd")
+                    b.Property<int>("QtdPessoas")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Telefone")
@@ -146,7 +146,7 @@ namespace ProAgil.Repository.Migrations
 
                     b.HasIndex("PalestranteId");
 
-                    b.ToTable("RedesSociais");
+                    b.ToTable("RedeSociais");
                 });
 
             modelBuilder.Entity("ProAgil.Domain.Lote", b =>
@@ -161,13 +161,13 @@ namespace ProAgil.Repository.Migrations
             modelBuilder.Entity("ProAgil.Domain.PalestranteEvento", b =>
                 {
                     b.HasOne("ProAgil.Domain.Evento", "Evento")
-                        .WithMany("PalestranteEventos")
+                        .WithMany("PalestrantesEventos")
                         .HasForeignKey("EventoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ProAgil.Domain.Palestrante", "Palestrante")
-                        .WithMany("PalestranteEventos")
+                        .WithMany("PalestrantesEventos")
                         .HasForeignKey("PalestranteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

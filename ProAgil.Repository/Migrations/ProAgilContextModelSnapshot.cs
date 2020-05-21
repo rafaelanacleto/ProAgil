@@ -22,7 +22,7 @@ namespace ProAgil.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("DataEvento")
+                    b.Property<DateTime>("DataEvento")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -34,7 +34,7 @@ namespace ProAgil.Repository.Migrations
                     b.Property<string>("Local")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Qtd")
+                    b.Property<int>("QtdPessoas")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Telefone")
@@ -132,7 +132,7 @@ namespace ProAgil.Repository.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("PalestranteId1")
+                    b.Property<int?>("PalestranteId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Url")
@@ -142,9 +142,9 @@ namespace ProAgil.Repository.Migrations
 
                     b.HasIndex("EventoId");
 
-                    b.HasIndex("PalestranteId1");
+                    b.HasIndex("PalestranteId");
 
-                    b.ToTable("RedesSociais");
+                    b.ToTable("RedeSociais");
                 });
 
             modelBuilder.Entity("ProAgil.Domain.Lote", b =>
@@ -159,13 +159,13 @@ namespace ProAgil.Repository.Migrations
             modelBuilder.Entity("ProAgil.Domain.PalestranteEvento", b =>
                 {
                     b.HasOne("ProAgil.Domain.Evento", "Evento")
-                        .WithMany("PalestranteEventos")
+                        .WithMany("PalestrantesEventos")
                         .HasForeignKey("EventoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ProAgil.Domain.Palestrante", "Palestrante")
-                        .WithMany("PalestranteEventos")
+                        .WithMany("PalestrantesEventos")
                         .HasForeignKey("PalestranteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -179,7 +179,7 @@ namespace ProAgil.Repository.Migrations
 
                     b.HasOne("ProAgil.Domain.Palestrante", null)
                         .WithMany("RedesSociais")
-                        .HasForeignKey("PalestranteId1");
+                        .HasForeignKey("PalestranteId");
                 });
 #pragma warning restore 612, 618
         }
