@@ -1,37 +1,43 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {}
+    "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {
+    "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
+        "projectUniqueName": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
         "projectName": "ProAgil.API",
-        "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
-        "packagesPath": "C:\\Users\\RafaelFerreiraAnacle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\obj\\",
+        "projectPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
+        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\RafaelFerreiraAnacle\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
-                "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
+              "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+                "projectPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
               },
-              "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
-                "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
+              "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
+                "projectPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
               }
             }
           }
@@ -90,23 +96,29 @@
         }
       }
     },
-    "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+    "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
         "projectName": "ProAgil.Domain",
-        "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
-        "packagesPath": "C:\\Users\\RafaelFerreiraAnacle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\obj\\",
+        "projectPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
+        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\RafaelFerreiraAnacle\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -145,31 +157,37 @@
         }
       }
     },
-    "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
+    "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
         "projectName": "ProAgil.Repository",
-        "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
-        "packagesPath": "C:\\Users\\RafaelFerreiraAnacle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\obj\\",
+        "projectPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
+        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\RafaelFerreiraAnacle\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
-                "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
+              "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+                "projectPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
               }
             }
           }
