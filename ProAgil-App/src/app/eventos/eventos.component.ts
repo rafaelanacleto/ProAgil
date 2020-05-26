@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventoService } from '../_services/evento.service';
+import { Eventos } from '../_models/Eventos';
 
 @Component({
   selector: 'app-eventos',
@@ -8,8 +9,8 @@ import { EventoService } from '../_services/evento.service';
 })
 export class EventosComponent implements OnInit {
 
-  eventos: any = [];
-  eventosFiltrados: any = [];
+  eventos: Eventos[];
+  eventosFiltrados: Eventos[];
   mostrarImagem: boolean = false;
 
   _filtroList: string;
@@ -43,11 +44,11 @@ export class EventosComponent implements OnInit {
   }
 
   getEventos() {
-    this.eventoService.getEvento().subscribe(
-      response =>
+    this.eventoService.getAllEvento().subscribe(
+      (_eventos: Eventos[]) =>
         {
-          this.eventos = response;
-          console.log(response);
+          this.eventos = _eventos;
+          console.log(_eventos);
         }, error => { console.log(error);}
     );
   }

@@ -36,12 +36,12 @@
           <td>
               <img *ngIf="mostrarImagem" src="http://localhost:5000/img/{{evento.imagemUrl}}" style="width: 60px; height: 35px;">
           </td>
-          <td>{{evento.eventoId}}</td>
+          <td>{{evento.id}}</td>
           <td>{{evento.tema}}</td>
           <td>{{evento.local}}</td>
           <td>{{evento.dataEvento}}</td>
-          <td>{{evento.qtd}}</td>
-          <td>{{evento.lote | uppercase}}</td>
+          <td>{{evento.qtdPessoas}}</td>
+          <td>{{evento.lotes | uppercase}}</td>
           <td>
             <button class="btn btn-success">Add</button>
             <button class="btn btn-warning">Excluir</button>
