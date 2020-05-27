@@ -30,13 +30,11 @@ export class EventosComponent implements OnInit {
     this.getEventos();
   }
 
-  filtrarEvento(filtrarPor: string): any {
+  filtrarEvento(filtrarPor: string): Eventos[] {
     filtrarPor = filtrarPor.toLocaleLowerCase();
-
     return this.eventos.filter(
       evento => evento.tema.toLocaleLowerCase().indexOf(filtrarPor) !== -1
     );
-
   }
 
   alternarImagem () {
@@ -48,6 +46,7 @@ export class EventosComponent implements OnInit {
       (_eventos: Eventos[]) =>
         {
           this.eventos = _eventos;
+          this.eventosFiltrados = this.eventos;
           console.log(_eventos);
         }, error => { console.log(error);}
     );
