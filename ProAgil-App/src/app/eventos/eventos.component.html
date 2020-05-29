@@ -50,8 +50,12 @@
           </div>       
           </td>
           <td>
-            <button class="btn btn-success">Add</button>
-            <button class="btn btn-warning">Excluir</button>
+            <button class="btn btn-sm btn-primary" tooltip="Editar" (click)="openModal(template)">
+              <i class="fa fa-edit"></i>
+            </button>
+            <button class="btn btn-sm btn-warning" tooltip="Apagar">
+              <i class="fa fa-eraser"></i>
+            </button>
           </td>
         </tr>
       </tbody>
@@ -63,6 +67,69 @@
         </tr>
       </tfoot>
     </table>
+  </div>
+  <div class="row">
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" 
+        aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      This is a modal.
+    </div>
+    </ng-template>
+  </div>
+  <div class="row">
+    <form [formGroup]="registerForm">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Tema</label>
+          <input type="text" class="form-control" formControlName="tema">
+        </div>
+      </div>  
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label>Local</label>
+          <input type="text" class="form-control" formControlName="local">
+        </div>
+        <div class="form-group col-md-4">
+          <label>Data e Hora</label>
+          <input type="text" class="form-control" formControlName="dataEvento">
+        </div>
+      </div>  
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label>Qtd Pessoas</label>
+          <input type="text" class="form-control" formControlName="qtdPessoas">
+        </div>
+        <div class="form-group col-md-9">
+          <label>Imagem</label>
+          <input type="text" class="form-control" formControlName="imagemUrl">
+        </div>
+      </div>  
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label>Telefone</label>
+          <input type="text" class="form-control" formControlName="telefone">
+        </div>
+        <div class="form-group col-md-8">
+          <label>Email</label>
+          <input type="text" class="form-control" formControlName="email">
+        </div>
+      </div> 
+    </form>
+    <br>
+    <button class="btn btn-secondary" (click)="openModal(template)">
+      Fechar
+    </button>
+    <button class="btn btn-primary" (click)="salvarAlteracao()">
+      Salvar Alterações
+    </button>
+    <br>
+    <br>
   </div>
 </div>
 

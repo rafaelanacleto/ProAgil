@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { EventoService } from '../_services/evento.service';
 import { Eventos } from '../_models/Eventos';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-eventos',
@@ -12,8 +14,14 @@ export class EventosComponent implements OnInit {
   eventos: Eventos[];
   eventosFiltrados: Eventos[];
   mostrarImagem: boolean = false;
-
   _filtroList: string;
+  modalRef: BsModalRef;
+  registerForm: FormGroup;
+
+  constructor(
+    private eventoService: EventoService,
+    private modalService: BsModalService
+  ) { }
 
   get filtroLista(): string {
     return this._filtroList;
@@ -24,7 +32,25 @@ export class EventosComponent implements OnInit {
     this.eventosFiltrados = this._filtroList ? this.filtrarEvento(this.filtroLista) : this.eventos;
   }
 
-  constructor(private eventoService: EventoService) { }
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  salvarAlteracao() {
+    console.log("metodo para salvar o form");
+  }
+
+  validation() {
+    this.registerForm = new FormGroup({
+      tema: new FormControl,
+      local: new FormControl,
+      dataEvento: new FormControl,
+      qtdPessoas: new FormControl,
+      imagemUrl: new FormControl,
+      telefone: new FormControl,
+      email: new FormControl
+    });
+  }
 
   ngOnInit() {
     this.getEventos();
