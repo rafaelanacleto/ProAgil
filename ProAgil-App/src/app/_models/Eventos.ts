@@ -16,5 +16,4 @@ export interface Eventos {
     redesSociais?: RedeSocial[];
     palestrantesEventos?: Palestrante[];
 
-
 }
