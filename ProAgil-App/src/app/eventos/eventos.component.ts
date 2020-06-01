@@ -2,7 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { EventoService } from '../_services/evento.service';
 import { Eventos } from '../_models/Eventos';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-eventos',
@@ -20,7 +20,8 @@ export class EventosComponent implements OnInit {
 
   constructor(
     private eventoService: EventoService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private fb: FormBuilder
   ) { }
 
   get filtroLista(): string {
@@ -42,17 +43,18 @@ export class EventosComponent implements OnInit {
 
   validation() {
     this.registerForm = new FormGroup({
-      tema: new FormControl,
-      local: new FormControl,
-      dataEvento: new FormControl,
-      qtdPessoas: new FormControl,
-      imagemUrl: new FormControl,
-      telefone: new FormControl,
-      email: new FormControl
+      tema: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(25)]),
+      local: new FormControl('', Validators.required),
+      dataEvento: new FormControl('', Validators.required),
+      qtdPessoas: new FormControl('', Validators.required),
+      imagemUrl: new FormControl('', Validators.required),
+      telefone: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email])
     });
   }
 
   ngOnInit() {
+    this.validation();
     this.getEventos();
   }
 
