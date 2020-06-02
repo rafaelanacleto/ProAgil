@@ -12,6 +12,7 @@ import { EventoService } from './_services/evento.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
    declarations: [
@@ -28,6 +29,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
       ReactiveFormsModule,
       FormsModule,
       BsDropdownModule.forRoot(),
+      BsDatepickerModule.forRoot(),
       TooltipModule.forRoot(),      
       ModalModule.forRoot()
    ],
