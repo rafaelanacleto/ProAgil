@@ -3,10 +3,10 @@ import { EventoService } from '../_services/evento.service';
 import { Eventos } from '../_models/Eventos';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { defineLocale, ptBrLocale } from 'ngx-bootstrap/chronos';
+import { defineLocale } from 'ngx-bootstrap/chronos';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
-import { deLocale } from 'ngx-bootstrap/locale';
-defineLocale('pt-br', deLocale);
+import { ptBrLocale } from 'ngx-bootstrap/locale';
+defineLocale('pt-br', ptBrLocale);
 
 @Component({
   selector: 'app-eventos',
