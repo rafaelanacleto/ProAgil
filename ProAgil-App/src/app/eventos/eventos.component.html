@@ -66,7 +66,7 @@
       <tfoot>
         <tr>
           <td>
-            <h6>Quantidade de registros: {{eventos.length}}</h6>
+            <h6>Total: {{eventos.length}}</h6>
           </td>
         </tr>
       </tfoot>
@@ -78,7 +78,7 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 id="dialog-sizes-name1" class="modal-title pull-left">Large modal</h4>
+            <h4 id="dialog-sizes-name1" class="modal-title pull-left">Novo Evento: </h4>
             <button type="button" class="close pull-right" (click)="template.hide()" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -159,10 +159,10 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" (click)="openModal(template)">
+            <button class="btn btn-secondary" (click)="template.hide()">
               Fechar
             </button>
-            <button class="btn btn-primary" [disabled]="!registerForm.valid" (click)="salvarAlteracao()">
+            <button class="btn btn-primary" [disabled]="!registerForm.valid" (click)="salvarAlteracao(template)">
               Salvar Alterações
             </button>
           </div>

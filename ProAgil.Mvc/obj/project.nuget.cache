@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OTqLVfo67I085C7p1H9TqfiwuNgdmMNLiN1st0UI6hSbh0PE5GzSplLxOQ6zlSDsHgSWHZUsn/KxxZOXf6890w==",
+  "dgSpecHash": "m7MLwim+eWI0GWyOEcLj2/QpMXKnPaAx5mY83Cr6xJWdjDjJrV+bfCEoPxO0c+B0LyTn8timovBVI5uO/kNW+g==",
   "success": true,
-  "projectFilePath": "c:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.Mvc\\ProAgil.Mvc.csproj",
+  "projectFilePath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Mvc/ProAgil.Mvc.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\rafae\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "/home/rafael/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.2/microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []
 }

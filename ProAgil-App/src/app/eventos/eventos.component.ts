@@ -43,8 +43,8 @@ export class EventosComponent implements OnInit {
     template.show();
   }
 
-  salvarAlteracao() {
-    console.log("metodo para salvar o form");
+  salvarAlteracao(template: any) {
+    console.log("metodo para salvar o form" + template);
   }
 
   validation() {
