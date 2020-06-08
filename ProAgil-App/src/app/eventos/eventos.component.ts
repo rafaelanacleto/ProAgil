@@ -16,6 +16,7 @@ defineLocale('pt-br', ptBrLocale);
 export class EventosComponent implements OnInit {
 
   eventos: Eventos[];
+  evento: Eventos;
   eventosFiltrados: Eventos[];
   mostrarImagem: boolean = false;
   _filtroList: string;
@@ -40,11 +41,26 @@ export class EventosComponent implements OnInit {
   }
 
   openModal(template: any) {
+    this.registerForm.reset();
     template.show();
   }
 
   salvarAlteracao(template: any) {
-    console.log("metodo para salvar o form" + template);
+    
+    if(this.registerForm.valid)
+    {
+      this.evento = Object.assign({}, this.registerForm.value);
+      this.eventoService.postEvento(this.evento).subscribe(
+        (novoEvento: Eventos) => {
+          console.log(novoEvento);
+          template.hide();
+          this.getEventos();
+        }, error => {
+          console.log(error);
+        } 
+      ); 
+    }
+
   }
 
   validation() {
