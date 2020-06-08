@@ -1,35 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "/home/rafael/Documentos/repos/ProAgil/ProAgil.API/ProAgil.API.csproj": {}
+    "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {}
   },
   "projects": {
-    "/home/rafael/Documentos/repos/ProAgil/ProAgil.API/ProAgil.API.csproj": {
+    "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rafael/Documentos/repos/ProAgil/ProAgil.API/ProAgil.API.csproj",
+        "projectUniqueName": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
         "projectName": "ProAgil.API",
-        "projectPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.API/ProAgil.API.csproj",
-        "packagesPath": "/home/rafael/.nuget/packages/",
-        "outputPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.API/obj/",
+        "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
+        "packagesPath": "C:\\Users\\RafaelFerreiraAnacle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/rafael/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\RafaelFerreiraAnacle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj": {
-                "projectPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj"
+              "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+                "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
               },
-              "/home/rafael/Documentos/repos/ProAgil/ProAgil.Repository/ProAgil.Repository.csproj": {
-                "projectPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Repository/ProAgil.Repository.csproj"
+              "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
+                "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
               }
             }
           }
@@ -43,6 +45,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
             "Microsoft.AspNetCore.SpaServices": {
               "target": "Package",
               "version": "[3.1.4, )"
@@ -64,6 +70,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[3.1.4, )"
+            },
+            "WebDAVServer.FileSystemStorage": {
+              "target": "Package",
+              "version": "[9.5.6612, )"
             }
           },
           "imports": [
@@ -76,12 +86,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -90,26 +94,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj": {
+    "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
         "projectName": "ProAgil.Domain",
-        "projectPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj",
-        "packagesPath": "/home/rafael/.nuget/packages/",
-        "outputPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/obj/",
+        "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
+        "packagesPath": "C:\\Users\\RafaelFerreiraAnacle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/rafael/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\RafaelFerreiraAnacle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -143,33 +149,35 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/rafael/Documentos/repos/ProAgil/ProAgil.Repository/ProAgil.Repository.csproj": {
+    "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Repository/ProAgil.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
         "projectName": "ProAgil.Repository",
-        "projectPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Repository/ProAgil.Repository.csproj",
-        "packagesPath": "/home/rafael/.nuget/packages/",
-        "outputPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Repository/obj/",
+        "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
+        "packagesPath": "C:\\Users\\RafaelFerreiraAnacle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/rafael/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\RafaelFerreiraAnacle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj": {
-                "projectPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj"
+              "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+                "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
               }
             }
           }
@@ -214,7 +222,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -3,4 +3,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)webdavserver.filesystemstorage\9.5.6612\build\webdavserver.filesystemstorage.targets" Condition="Exists('$(NuGetPackageRoot)webdavserver.filesystemstorage\9.5.6612\build\webdavserver.filesystemstorage.targets')" />
+  </ImportGroup>
 </Project>

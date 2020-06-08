@@ -6,6 +6,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
+import { templateJitUrl } from '@angular/compiler';
 defineLocale('pt-br', ptBrLocale);
 
 @Component({
@@ -21,6 +22,7 @@ export class EventosComponent implements OnInit {
   mostrarImagem: boolean = false;
   _filtroList: string;
   registerForm: FormGroup;
+  modalType: string;
 
   constructor(
     private eventoService: EventoService,
@@ -45,10 +47,53 @@ export class EventosComponent implements OnInit {
     template.show();
   }
 
+  editaTelaEvento(evento: Eventos, template) {
+
+    template.show();
+    this.modalType = "edit";
+    this.registerForm.patchValue({
+      tema: evento.tema,
+      local: evento.local,
+      dataEvento: evento.dataEvento,
+      qtdPessoas: evento.qtdPessoas,
+      imagemUrl: evento.imagemUrl,
+      telefone: evento.telefone,
+      email: evento.email
+    });
+  }
+
+  deleteEvento(idevento: number, template: any) {
+    this.eventoService.deleteEvento(idevento).subscribe(
+      (retorno: Eventos) => {
+        console.log(retorno);
+        template.hide();
+        this.getEventos();
+      }, error => {
+        console.log(error);
+      }
+    );
+  }
+
   salvarAlteracao(template: any) {
     
     if(this.registerForm.valid)
     {
+      if(this.modalType == "edit")
+      {
+        this.evento = Object.assign({}, this.registerForm.value);
+        this.eventoService.putEvento(this.evento.id, template).subscribe(
+          (retorno: Eventos) => {
+            console.log(retorno);
+            template.hide();
+            this.getEventos();
+          }, error => {
+            console.log(error);
+          }
+        );
+
+        this.modalType = "";
+      }
+
       this.evento = Object.assign({}, this.registerForm.value);
       this.eventoService.postEvento(this.evento).subscribe(
         (novoEvento: Eventos) => {

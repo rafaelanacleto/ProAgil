@@ -54,10 +54,10 @@
             </div>
           </td>
           <td>
-            <button class="btn btn-sm btn-primary" tooltip="Editar" (click)="openModal(template)">
+            <button class="btn btn-sm btn-primary" tooltip="Editar" (click)="editaTelaEvento(evento, template)">
               <i class="fa fa-edit"></i>
             </button>
-            <button class="btn btn-sm btn-warning" tooltip="Apagar">
+            <button class="btn btn-sm btn-warning" tooltip="Apagar" (click)="deleteEvento(evento.id, template)">
               <i class="fa fa-eraser"></i>
             </button>
           </td>
