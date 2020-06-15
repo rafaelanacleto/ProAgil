@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RGnDDJ05BIDFQFU1LRKPYwyz+MbuyNuzp6G1CAKtTASgg7gLeGA0ULN/FclacxL/9ymbNoNLlpuTsSDIj59C5A==",
+  "dgSpecHash": "u+DUzIiOIsB1CjKNqVwCh0zcDlL9bBApSQNx3XTkyXuf+OCWGYr+xv8v5J7bX34L5PQtPtwD8dj6wjMxJNDWBg==",
   "success": true,
   "projectFilePath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.API/ProAgil.API.csproj",
   "expectedPackageFiles": [
@@ -167,8 +167,7 @@
     "/home/rafael/.nuget/packages/system.xml.xmldocument/4.0.1/system.xml.xmldocument.4.0.1.nupkg.sha512",
     "/home/rafael/.nuget/packages/system.xml.xpath/4.0.1/system.xml.xpath.4.0.1.nupkg.sha512",
     "/home/rafael/.nuget/packages/system.xml.xpath.xdocument/4.0.1/system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
-    "/home/rafael/.nuget/packages/webdavserver.filesystemstorage/9.5.6612/webdavserver.filesystemstorage.9.5.6612.nupkg.sha512",
-    "/home/rafael/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.2/microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "/home/rafael/.nuget/packages/webdavserver.filesystemstorage/9.5.6612/webdavserver.filesystemstorage.9.5.6612.nupkg.sha512"
   ],
   "logs": []
 }

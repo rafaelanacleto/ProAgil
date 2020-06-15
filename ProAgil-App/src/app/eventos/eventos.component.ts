@@ -63,15 +63,19 @@ export class EventosComponent implements OnInit {
   }
 
   deleteEvento(idevento: number, template: any) {
-    this.eventoService.deleteEvento(idevento).subscribe(
-      (retorno: Eventos) => {
-        console.log(retorno);
-        template.hide();
-        this.getEventos();
-      }, error => {
-        console.log(error);
-      }
-    );
+
+    if (window.confirm("Você realmente deseja excluir Evento? ")) { 
+      this.eventoService.deleteEvento(idevento).subscribe(
+        (retorno: Eventos) => {
+          console.log(retorno);
+          template.hide();
+          this.getEventos();
+        }, error => {
+          console.log(error);
+        }
+      );
+    }
+    
   }
 
   salvarAlteracao(template: any) {
@@ -80,7 +84,7 @@ export class EventosComponent implements OnInit {
     {
       if(this.modalType == "edit")
       {
-        this.evento = Object.assign({}, this.registerForm.value);
+        this.evento = Object.assign({id: this.evento.id}, this.registerForm.value);
         this.eventoService.putEvento(this.evento.id, template).subscribe(
           (retorno: Eventos) => {
             console.log(retorno);

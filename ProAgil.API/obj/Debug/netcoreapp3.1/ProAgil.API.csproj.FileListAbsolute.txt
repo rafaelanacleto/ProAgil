@@ -322,3 +322,4 @@ C:/Users/RafaelFerreiraAnacle/source/repos/ProAgil/ProAgil.API/bin/Debug/netcore
 /home/rafael/Documentos/repos/ProAgil/ProAgil.API/bin/Debug/netcoreapp3.1/runtimes/win7-arm/native/libuv.dll
 /home/rafael/Documentos/repos/ProAgil/ProAgil.API/bin/Debug/netcoreapp3.1/runtimes/win7-x64/native/libuv.dll
 /home/rafael/Documentos/repos/ProAgil/ProAgil.API/bin/Debug/netcoreapp3.1/runtimes/win7-x86/native/libuv.dll
+/home/rafael/Documentos/repos/ProAgil/ProAgil.API/bin/Debug/netcoreapp3.1/package-lock.json
