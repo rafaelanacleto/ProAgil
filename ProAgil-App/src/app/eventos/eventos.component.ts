@@ -22,7 +22,7 @@ export class EventosComponent implements OnInit {
   mostrarImagem: boolean = false;
   _filtroList: string;
   registerForm: FormGroup;
-  modalType: string;
+  modalType = "put";
 
   constructor(
     private eventoService: EventoService,
@@ -47,19 +47,18 @@ export class EventosComponent implements OnInit {
     template.show();
   }
 
-  editaTelaEvento(evento: Eventos, template) {
+  novoEvento(template: any) {
+    this.openModal(template);
+    this.modalType = "post"
+
+  }
+
+  editaTelaEvento(evento: Eventos, template: any) {
 
     template.show();
-    this.modalType = "edit";
-    this.registerForm.patchValue({
-      tema: evento.tema,
-      local: evento.local,
-      dataEvento: evento.dataEvento,
-      qtdPessoas: evento.qtdPessoas,
-      imagemUrl: evento.imagemUrl,
-      telefone: evento.telefone,
-      email: evento.email
-    });
+    this.modalType = "put";
+    this.evento = evento;
+    this.registerForm.patchValue(this.evento);
   }
 
   deleteEvento(idevento: number, template: any) {
@@ -82,10 +81,10 @@ export class EventosComponent implements OnInit {
     
     if(this.registerForm.valid)
     {
-      if(this.modalType == "edit")
+      if(this.modalType == "put")
       {
         this.evento = Object.assign({id: this.evento.id}, this.registerForm.value);
-        this.eventoService.putEvento(this.evento.id, template).subscribe(
+        this.eventoService.putEvento(this.evento).subscribe(
           (retorno: Eventos) => {
             console.log(retorno);
             template.hide();
@@ -97,17 +96,20 @@ export class EventosComponent implements OnInit {
 
         this.modalType = "";
       }
-
-      this.evento = Object.assign({}, this.registerForm.value);
-      this.eventoService.postEvento(this.evento).subscribe(
-        (novoEvento: Eventos) => {
-          console.log(novoEvento);
-          template.hide();
-          this.getEventos();
-        }, error => {
-          console.log(error);
-        } 
-      ); 
+      else if(this.modalType == "post")
+      {
+        this.evento = Object.assign({}, this.registerForm.value);
+        this.eventoService.postEvento(this.evento).subscribe(
+          (novoEvento: Eventos) => {
+            console.log(novoEvento);
+            template.hide();
+            this.getEventos();
+          }, error => {
+            console.log(error);
+          } 
+        ); 
+      }
+      
     }
 
   }
