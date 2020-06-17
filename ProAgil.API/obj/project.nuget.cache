@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "u+DUzIiOIsB1CjKNqVwCh0zcDlL9bBApSQNx3XTkyXuf+OCWGYr+xv8v5J7bX34L5PQtPtwD8dj6wjMxJNDWBg==",
+  "dgSpecHash": "SMZYrX8uTFEomtExTSOr4gTogc9cDl7QPq8XsZoljf5G3w9e8gVyIMb5+K1jaewj9Kj3ldY0BJHaJ4GITJ8erg==",
   "success": true,
   "projectFilePath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.API/ProAgil.API.csproj",
   "expectedPackageFiles": [
+    "/home/rafael/.nuget/packages/automapper/9.0.0/automapper.9.0.0.nupkg.sha512",
+    "/home/rafael/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/7.0.0/automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "/home/rafael/.nuget/packages/ithit.server/9.5.6612/ithit.server.9.5.6612.nupkg.sha512",
     "/home/rafael/.nuget/packages/ithit.webdav.server/9.5.6612/ithit.webdav.server.9.5.6612.nupkg.sha512",
     "/home/rafael/.nuget/packages/ithit.webdav.server.core/9.5.6612/ithit.webdav.server.core.9.5.6612.nupkg.sha512",
@@ -121,8 +123,8 @@
     "/home/rafael/.nuget/packages/system.objectmodel/4.0.12/system.objectmodel.4.0.12.nupkg.sha512",
     "/home/rafael/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
     "/home/rafael/.nuget/packages/system.reflection.dispatchproxy/4.0.1/system.reflection.dispatchproxy.4.0.1.nupkg.sha512",
-    "/home/rafael/.nuget/packages/system.reflection.emit/4.0.1/system.reflection.emit.4.0.1.nupkg.sha512",
-    "/home/rafael/.nuget/packages/system.reflection.emit.ilgeneration/4.0.1/system.reflection.emit.ilgeneration.4.0.1.nupkg.sha512",
+    "/home/rafael/.nuget/packages/system.reflection.emit/4.3.0/system.reflection.emit.4.3.0.nupkg.sha512",
+    "/home/rafael/.nuget/packages/system.reflection.emit.ilgeneration/4.3.0/system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "/home/rafael/.nuget/packages/system.reflection.emit.lightweight/4.0.1/system.reflection.emit.lightweight.4.0.1.nupkg.sha512",
     "/home/rafael/.nuget/packages/system.reflection.extensions/4.0.1/system.reflection.extensions.4.0.1.nupkg.sha512",
     "/home/rafael/.nuget/packages/system.reflection.metadata/1.3.0/system.reflection.metadata.1.3.0.nupkg.sha512",
