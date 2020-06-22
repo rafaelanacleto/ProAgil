@@ -15,6 +15,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.SpaServices;
 using ProAgil.Repository;
+using AutoMapper;
 
 namespace ProAgil.API
 {
@@ -33,6 +34,7 @@ namespace ProAgil.API
             services.AddControllers();            
             services.AddDbContext<ProAgilContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IProAgilRepository, ProAgilRepository>();
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers().AddNewtonsoftJson();
             services.AddCors();      
         }

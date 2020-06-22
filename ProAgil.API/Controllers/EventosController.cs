@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ProAgil.API.Dtos;
 using ProAgil.Domain;
 using ProAgil.Repository;
 
@@ -14,9 +16,11 @@ namespace ProAgil.API.Controllers
     public class EventosController : ControllerBase
     {
         private IProAgilRepository Context { get; }
+        private readonly IMapper _mapper;
 
-        public EventosController(IProAgilRepository context)
+        public EventosController(IProAgilRepository context, IMapper mapper)
         {
+            this._mapper = mapper;
             this.Context = context;
         }
 
@@ -25,11 +29,15 @@ namespace ProAgil.API.Controllers
         {
             try
             {
-                return Ok(await Context.GetAllEventoAsync(true));
+                var eventos = await Context.GetAllEventoAsync(true);
+
+                var result = _mapper.Map<EventoDto[]>(eventos);
+
+                return Ok(result);
             }
             catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API - " +  ex.Message);
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API - " + ex.Message);
             }
 
         }
@@ -42,9 +50,9 @@ namespace ProAgil.API.Controllers
                 var results = await Context.GetAllEventoAsyncById(id, true);
                 return Ok(results);
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro Interno API - {ex.Message} ");
             }
 
         }
@@ -65,11 +73,14 @@ namespace ProAgil.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Evento model)
+        public async Task<IActionResult> Post(EventoDto model)
         {
             try
             {
-                Context.Add(model);
+
+                var eventos = _mapper.Map<Evento>(model);
+
+                Context.Add(eventos);
 
                 if (await Context.SaveChangesAsync())
                 {
@@ -77,15 +88,15 @@ namespace ProAgil.API.Controllers
                 }
 
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro Interno API -  {ex.Message} ");
             }
 
             return BadRequest();
         }
 
-        [HttpPut]
+        [HttpPut("{EventoId}")]
         public async Task<IActionResult> Put(int EventoId, Evento model)
         {
             try
@@ -96,18 +107,20 @@ namespace ProAgil.API.Controllers
                 {
                     return NotFound();
                 }
-                
+
+                _mapper.Map(model, evento);
+
                 Context.Update(model);
 
                 if (await Context.SaveChangesAsync())
                 {
-                    return Created($"eventos{model.Id}", model);
+                    return Created($"eventos{model.Id}", _mapper.Map<EventoDto>(evento));
                 }
 
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro Interno API - {ex.Message} ");
             }
 
             return BadRequest();
@@ -125,7 +138,7 @@ namespace ProAgil.API.Controllers
                 {
                     return NotFound();
                 }
-                
+
                 Context.Delete(evento);
 
                 if (await Context.SaveChangesAsync())

@@ -14,6 +14,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.4"/>
     <PackageReference Include="WebDAVServer.FileSystemStorage" Version="9.5.6612"/>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0"/>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.5"/>
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="3.1.5"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProAgil.Domain\ProAgil.Domain.csproj"/>
