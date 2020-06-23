@@ -24,6 +24,7 @@ export class EventosComponent implements OnInit {
   _filtroList: string;
   registerForm: FormGroup;
   modalType = "put";
+  file: File;
 
   constructor(
     private eventoService: EventoService,
@@ -46,12 +47,13 @@ export class EventosComponent implements OnInit {
 
   openModal(template: any) {
     this.registerForm.reset();
+    this.modalType = "";
     template.show();
   }
 
   novoEvento(template: any) {
     this.openModal(template);
-    this.modalType = "post"
+    this.modalType = "post";
 
   }
 
@@ -86,6 +88,9 @@ export class EventosComponent implements OnInit {
       if(this.modalType == "put")
       {
         this.evento = Object.assign({id: this.evento.id}, this.registerForm.value);
+        this.eventoService.postUpload(this.file);
+        const nomeArquivo = this.evento.imagemUrl.split('\\', 3);
+        this.evento.imagemUrl = nomeArquivo[2];
         this.eventoService.putEvento(this.evento).subscribe(
           (retorno: Eventos) => {
             console.log(retorno);
@@ -101,6 +106,9 @@ export class EventosComponent implements OnInit {
       else if(this.modalType == "post")
       {
         this.evento = Object.assign({}, this.registerForm.value);
+        this.eventoService.postUpload(this.file);
+        const nomeArquivo = this.evento.imagemUrl.split('\\', 3);
+        this.evento.imagemUrl = nomeArquivo[2];
         this.eventoService.postEvento(this.evento).subscribe(
           (novoEvento: Eventos) => {
             console.log(novoEvento);
@@ -142,6 +150,14 @@ export class EventosComponent implements OnInit {
 
   alternarImagem () {
     this.mostrarImagem = !this.mostrarImagem;
+  }
+
+  onFileChange(event) {
+    
+    const reader = new FileReader();
+    if (event.target.files) {
+      this.file = event.target.files;
+    }
   }
 
   getEventos() {
