@@ -17,6 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { PalestrantesComponent } from './palestrantes/palestrantes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContatosComponent } from './contatos/contatos.component';
+import { TituloComponent } from "./_shared/titulo/titulo.component";
 
 @NgModule({
    declarations: [
@@ -26,7 +27,8 @@ import { ContatosComponent } from './contatos/contatos.component';
       DateTimeFormatPipePipe,
       PalestrantesComponent,
       DashboardComponent,
-      ContatosComponent
+      ContatosComponent,
+      TituloComponent
    ],
    imports: [
       BrowserModule,
