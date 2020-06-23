@@ -13,13 +13,20 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ToastrModule } from 'ngx-toastr';
+import { PalestrantesComponent } from './palestrantes/palestrantes.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ContatosComponent } from './contatos/contatos.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       EventosComponent,
       NavComponent,
-      DateTimeFormatPipePipe
+      DateTimeFormatPipePipe,
+      PalestrantesComponent,
+      DashboardComponent,
+      ContatosComponent
    ],
    imports: [
       BrowserModule,
@@ -30,8 +37,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
       FormsModule,
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
-      TooltipModule.forRoot(),      
-      ModalModule.forRoot()
+      TooltipModule.forRoot(),
+      ModalModule.forRoot(),
+      ToastrModule.forRoot()//ToastrModuleadded
    ],
    providers: [
       EventoService

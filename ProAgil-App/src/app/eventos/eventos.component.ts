@@ -7,6 +7,7 @@ import { defineLocale } from 'ngx-bootstrap/chronos';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
 import { templateJitUrl } from '@angular/compiler';
+import { ToastrService } from 'ngx-toastr';
 defineLocale('pt-br', ptBrLocale);
 
 @Component({
@@ -28,7 +29,8 @@ export class EventosComponent implements OnInit {
     private eventoService: EventoService,
     private modalService: BsModalService,
     private fb: FormBuilder,
-    private local: BsLocaleService
+    private local: BsLocaleService,
+    private toastr: ToastrService
   ) {
     this.local.use('pt-br');
    }
@@ -55,7 +57,7 @@ export class EventosComponent implements OnInit {
 
   editaTelaEvento(evento: Eventos, template: any) {
 
-    template.show();
+    template.show();    
     this.modalType = "put";
     this.evento = evento;
     this.registerForm.patchValue(this.evento);
@@ -66,11 +68,11 @@ export class EventosComponent implements OnInit {
     if (window.confirm("Você realmente deseja excluir Evento? ")) { 
       this.eventoService.deleteEvento(idevento).subscribe(
         (retorno: Eventos) => {
-          console.log(retorno);
+          this.toastr.success('Deletado...', 'Exclusao!');
           template.hide();
           this.getEventos();
         }, error => {
-          console.log(error);
+          this.toastr.error(error, 'Erro');
         }
       );
     }

@@ -66,7 +66,7 @@
       <tfoot>
         <tr>
           <td>
-            <h6>Total: {{eventos.length}}</h6>
+            <h6>Total: 5</h6>
           </td>
         </tr>
       </tfoot>
@@ -110,7 +110,7 @@
                   <label>Data e Hora</label>
                   <input type="text" class="form-control"
                     [ngClass]="{'is-invalid': registerForm.get('dataEvento').errors && registerForm.get('dataEvento').touched}"
-                    formControlName="dataEvento" bsDatepicker [bsConfig]="{dateInputFormat : 'DD/MM/YYYY hh:mm a'}">
+                    formControlName="dataEvento" bsDatepicker [bsConfig]="{dateInputFormat : 'DD/MM/YYYY hh:mm'}">
                   <div class="invalid-feedback">
                     Data Obrigatório
                   </div>
