@@ -88,7 +88,7 @@ export class EventosComponent implements OnInit {
       if(this.modalType == "put")
       {
         this.evento = Object.assign({id: this.evento.id}, this.registerForm.value);
-        this.eventoService.postUpload(this.file);
+        this.eventoService.postUpload(this.file).subscribe();
         const nomeArquivo = this.evento.imagemUrl.split('\\', 3);
         this.evento.imagemUrl = nomeArquivo[2];
         this.eventoService.putEvento(this.evento).subscribe(
@@ -106,7 +106,7 @@ export class EventosComponent implements OnInit {
       else if(this.modalType == "post")
       {
         this.evento = Object.assign({}, this.registerForm.value);
-        this.eventoService.postUpload(this.file);
+        this.eventoService.postUpload(this.file).subscribe();
         const nomeArquivo = this.evento.imagemUrl.split('\\', 3);
         this.evento.imagemUrl = nomeArquivo[2];
         this.eventoService.postEvento(this.evento).subscribe(

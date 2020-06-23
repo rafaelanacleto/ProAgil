@@ -71,7 +71,7 @@ namespace ProAgil.API.Controllers
             }
             catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API - " + ex.Message);
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Ao Salvar imagem - " + ex.Message);
             }
 
         }

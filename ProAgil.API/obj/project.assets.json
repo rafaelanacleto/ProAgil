@@ -484,18 +484,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Owin/4.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Owin": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/Microsoft.Owin.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.Owin.dll": {}
-        }
-      },
       "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
@@ -515,15 +503,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
-        }
-      },
-      "Owin/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Owin.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Owin.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -2132,19 +2111,6 @@
         "runtime.json"
       ]
     },
-    "Microsoft.Owin/4.1.0": {
-      "sha512": "pMeDJpH9LUSeQv3Rc2tq/6s3yANPyBa7Qe0xAbpX7GGhfaLSgcUC+WCDb8QteDh7BMkBBnZ3BM8ol+IWbtNehA==",
-      "type": "package",
-      "path": "microsoft.owin/4.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/Microsoft.Owin.XML",
-        "lib/net45/Microsoft.Owin.dll",
-        "microsoft.owin.4.1.0.nupkg.sha512",
-        "microsoft.owin.nuspec"
-      ]
-    },
     "Newtonsoft.Json/12.0.2": {
       "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
@@ -2194,18 +2160,6 @@
         "lib/netstandard2.0/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.2.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
-      ]
-    },
-    "Owin/1.0.0": {
-      "sha512": "OseTFniKmyp76mEzOBwIKGBRS5eMoYNkMKaMXOpxx9jv88+b6mh1rSaw43vjBOItNhaLFG3d0a20PfHyibH5sw==",
-      "type": "package",
-      "path": "owin/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40/Owin.dll",
-        "owin.1.0.0.nupkg.sha512",
-        "owin.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -4576,43 +4530,40 @@
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 3.1.5",
       "Microsoft.Extensions.DependencyModel >= 3.1.5",
       "Microsoft.Extensions.FileProviders.Physical >= 3.1.5",
-      "Microsoft.Owin >= 4.1.0",
       "ProAgil.Domain >= 1.0.0",
       "ProAgil.Repository >= 1.0.0",
       "System.Net.Http >= 4.3.4"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\RafaelFerreiraAnacle\\.nuget\\packages\\": {}
+    "/home/rafael/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
+      "projectUniqueName": "/home/rafael/Documentos/repos/ProAgil/ProAgil.API/ProAgil.API.csproj",
       "projectName": "ProAgil.API",
-      "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
-      "packagesPath": "C:\\Users\\RafaelFerreiraAnacle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.API\\obj\\",
+      "projectPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.API/ProAgil.API.csproj",
+      "packagesPath": "/home/rafael/.nuget/packages/",
+      "outputPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\RafaelFerreiraAnacle\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/rafael/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
-              "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
+            "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj": {
+              "projectPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj"
             },
-            "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
-              "projectPath": "C:\\Users\\RafaelFerreiraAnacle\\source\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
+            "/home/rafael/Documentos/repos/ProAgil/ProAgil.Repository/ProAgil.Repository.csproj": {
+              "projectPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Repository/ProAgil.Repository.csproj"
             }
           }
         }
@@ -4668,10 +4619,6 @@
             "target": "Package",
             "version": "[3.1.5, )"
           },
-          "Microsoft.Owin": {
-            "target": "Package",
-            "version": "[4.1.0, )"
-          },
           "System.Net.Http": {
             "target": "Package",
             "version": "[4.3.4, )"
@@ -4695,30 +4642,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.301/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Owin 4.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Owin",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Owin 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "Owin",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }
