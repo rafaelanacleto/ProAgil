@@ -61,7 +61,7 @@ export class EventosComponent implements OnInit {
 
     template.show();    
     this.modalType = "put";
-    this.evento = evento;
+    this.evento = Object.assign({}, evento);
     this.registerForm.patchValue(this.evento);
   }
 
