@@ -131,7 +131,7 @@ namespace ProAgil.API.Controllers
         }
 
         [HttpPut("{EventoId}")]
-        public async Task<IActionResult> Put(int EventoId, Evento model)
+        public async Task<IActionResult> Put(int EventoId, EventoDto model)
         {
             try
             {
@@ -143,8 +143,7 @@ namespace ProAgil.API.Controllers
                 }
 
                 _mapper.Map(model, evento);
-
-                Context.Update(model);
+                Context.Update(evento);               
 
                 if (await Context.SaveChangesAsync())
                 {

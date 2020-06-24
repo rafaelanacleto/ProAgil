@@ -23,8 +23,11 @@ export class EventosComponent implements OnInit {
   mostrarImagem: boolean = false;
   _filtroList: string;
   registerForm: FormGroup;
-  modalType = "put";
+  bodyDeletarEvento = '';
+  modoSalvar = "put";
   file: File;
+  fileNameToUpdate: string;
+  dataAtual: string;
 
   constructor(
     private eventoService: EventoService,
@@ -47,92 +50,112 @@ export class EventosComponent implements OnInit {
 
   openModal(template: any) {
     this.registerForm.reset();
-    this.modalType = "";
+    this.modoSalvar = "";
     template.show();
   }
 
   novoEvento(template: any) {
     this.openModal(template);
-    this.modalType = "post";
+    this.modoSalvar = "post";
 
   }
 
   editaTelaEvento(evento: Eventos, template: any) {
 
-    template.show();    
-    this.modalType = "put";
+    this.openModal(template);
+    this.modoSalvar = "put";
     this.evento = Object.assign({}, evento);
+    this.fileNameToUpdate = evento.imagemUrl.toString();
+    this.evento.imagemUrl = '';
     this.registerForm.patchValue(this.evento);
   }
 
-  deleteEvento(idevento: number, template: any) {
+  excluirEvento(evento: Eventos, template: any) {
+    this.openModal(template);
+    this.evento = evento;
+    this.bodyDeletarEvento = `Tem certeza que deseja excluir o Evento: ${evento.tema}, Código: ${evento.id}`;
+  }
 
-    if (window.confirm("Você realmente deseja excluir Evento? ")) { 
-      this.eventoService.deleteEvento(idevento).subscribe(
-        (retorno: Eventos) => {
-          this.toastr.success('Deletado...', 'Exclusao!');
-          template.hide();
-          this.getEventos();
-        }, error => {
-          this.toastr.error(error, 'Erro');
-        }
-      );
+  confirmeDelete(template: any) {
+    this.eventoService.deleteEvento(this.evento.id).subscribe(
+      () => {
+        template.hide();
+        this.getEventos();
+        this.toastr.success('Deletado com Sucesso');
+      }, error => {
+        this.toastr.error('Erro ao tentar Deletar');
+        console.log(error);
+      }
+    );
+  }
+
+  uploadImagem() {
+    if (this.modoSalvar === 'post') {
+      const nomeArquivo = this.evento.imagemUrl.split('\\', 3);
+      this.evento.imagemUrl = nomeArquivo[2];
+
+      this.eventoService.postUpload(this.file, nomeArquivo[2])
+        .subscribe(
+          () => {
+            this.dataAtual = new Date().getMilliseconds().toString();
+            this.getEventos();
+          }
+        );
+    } else {
+      this.evento.imagemUrl = this.fileNameToUpdate;
+      this.eventoService.postUpload(this.file, this.fileNameToUpdate)
+        .subscribe(
+          () => {
+            this.dataAtual = new Date().getMilliseconds().toString();
+            this.getEventos();
+          }
+        );
     }
-    
   }
 
   salvarAlteracao(template: any) {
-    
-    if(this.registerForm.valid)
-    {
-      if(this.modalType == "put")
-      {
-        this.evento = Object.assign({id: this.evento.id}, this.registerForm.value);
-        this.eventoService.postUpload(this.file).subscribe();
-        const nomeArquivo = this.evento.imagemUrl.split('\\', 3);
-        this.evento.imagemUrl = nomeArquivo[2];
-        this.eventoService.putEvento(this.evento).subscribe(
-          (retorno: Eventos) => {
-            console.log(retorno);
-            template.hide();
-            this.getEventos();
-          }, error => {
-            console.log(error);
-          }
-        );
-
-        this.modalType = "";
-      }
-      else if(this.modalType == "post")
-      {
+    if (this.registerForm.valid) {
+      if (this.modoSalvar === 'post') {
         this.evento = Object.assign({}, this.registerForm.value);
-        this.eventoService.postUpload(this.file).subscribe();
-        const nomeArquivo = this.evento.imagemUrl.split('\\', 3);
-        this.evento.imagemUrl = nomeArquivo[2];
+
+        this.uploadImagem();
+
         this.eventoService.postEvento(this.evento).subscribe(
           (novoEvento: Eventos) => {
-            console.log(novoEvento);
             template.hide();
             this.getEventos();
+            this.toastr.success('Inserido com Sucesso!');
           }, error => {
-            console.log(error);
-          } 
-        ); 
-      }
-      
-    }
+            this.toastr.error(`Erro ao Inserir: ${error}`);
+          }
+        );
+      } else {
+        this.evento = Object.assign({ id: this.evento.id }, this.registerForm.value);
 
+        this.uploadImagem();
+
+        this.eventoService.putEvento(this.evento).subscribe(
+          () => {
+            template.hide();
+            this.getEventos();
+            this.toastr.success('Editado com Sucesso!');
+          }, error => {
+            this.toastr.error(`Erro ao Editar: ${error}`);
+          }
+        );
+      }
+    }
   }
 
   validation() {
-    this.registerForm = new FormGroup({
-      tema: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(25)]),
-      local: new FormControl('', Validators.required),
-      dataEvento: new FormControl('', Validators.required),
-      qtdPessoas: new FormControl('', Validators.required),
-      imagemUrl: new FormControl('', Validators.required),
-      telefone: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email])
+    this.registerForm = this.fb.group({
+      tema: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
+      local: ['', Validators.required],
+      dataEvento: ['', Validators.required],
+      imagemUrl: ['', Validators.required],
+      qtdPessoas: ['', [Validators.required, Validators.max(120000)]],
+      telefone: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]]
     });
   }
 
@@ -159,15 +182,17 @@ export class EventosComponent implements OnInit {
       this.file = event.target.files;
     }
   }
-
+ 
   getEventos() {
+    this.dataAtual = new Date().getMilliseconds().toString();
+
     this.eventoService.getAllEvento().subscribe(
-      (_eventos: Eventos[]) =>
-        {
-          this.eventos = _eventos;          
-          this.eventosFiltrados = this.eventos;
-          console.log(_eventos);
-        }, error => { console.log(error);}
-    );
+      (_eventos: Eventos[]) => {
+        this.eventos = _eventos;
+        this.eventosFiltrados = this.eventos;
+        console.log(this.eventos);
+      }, error => {
+        this.toastr.error(`Erro ao tentar Carregar eventos: ${error}`);
+      });
   }
 }
