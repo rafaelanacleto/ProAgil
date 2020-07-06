@@ -4942,7 +4942,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rafae\\.nuget\\packages\\": {}
+    "C:\\Users\\rafae\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -4953,6 +4954,9 @@
       "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\rafae\\source\\repos\\ProAgil\\ProAgil.API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -4962,6 +4966,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nuget.herval.com.br/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
