@@ -34,7 +34,6 @@ namespace ProAgil.API.Controllers
             try
             {
                 var eventos = await Context.GetAllEventoAsync(true);
-
                 var result = _mapper.Map<EventoDto[]>(eventos);
 
                 return Ok(result);
