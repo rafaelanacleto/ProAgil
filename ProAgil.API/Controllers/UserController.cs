@@ -48,12 +48,24 @@ namespace ProAgil.API.Controllers
             }
             catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro Interno API - " + ex.Message);
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro API - " + ex.Message);
             }
 
         }
 
+        [HttpPost("Register")]
+        public async Task<IActionResult> Register(UserDto user)
+        {
+            try
+            { 
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro API - " + ex.Message);
+            }
 
+        }
 
     }
 }
