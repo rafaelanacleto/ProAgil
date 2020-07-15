@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using System.IO;
 using System;
 using System.Net;
-using System.Net.Http.Headers;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +14,7 @@ using ProAgil.Repository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Identity;
 using ProAgil.Domain.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ProAgil.API.Controllers
 {
@@ -40,32 +40,54 @@ namespace ProAgil.API.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetUser()
+        public async Task<IActionResult> GetUser(UserDto user)
         {
             try
             {                
-                return Ok(new User());
+                return Ok(user);
             }
             catch (System.Exception ex)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro API - " + ex.Message);
             }
+        }
 
+        [HttpPost]
+        public async Task<IActionResult> Login(UserLoginDto userLogin)
+        {
+            try
+            {                
+                var user = await this.userManager.FindByNameAsync(userLogin.UserName);
+                    
+
+
+            }
+            catch (System.Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro API - " + ex.Message);
+            }
         }
 
         [HttpPost("Register")]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(UserDto user)
         {
             try
             { 
-                return Ok();
+                var usu = _mapper.Map<User>(user);
+                var result = await this.userManager.CreateAsync(usu, user.Password);
+                var userToReturn = _mapper.Map<UserDto>(usu);
+
+                if (result.Succeeded)
+                {
+                    return Created("GetUser", userToReturn);
+                }
+                return BadRequest(result.Errors);         
             }
             catch (System.Exception ex)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro API - " + ex.Message);
             }
-
         }
-
     }
 }
