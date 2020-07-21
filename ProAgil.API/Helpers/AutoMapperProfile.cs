@@ -26,7 +26,8 @@ namespace ProAgil.API.Helpers
             CreateMap<PalestranteEvento, PalestranteEventoDto>().ReverseMap();
 
             CreateMap<User, UserDto>().ReverseMap();
-
+            CreateMap<User, UserLoginDto>().ReverseMap();
+            
         }                
 
     }

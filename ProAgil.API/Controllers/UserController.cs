@@ -25,17 +25,17 @@ namespace ProAgil.API.Controllers
         private readonly IConfiguration config;
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
-        private readonly IMapper _mapper;        
+        private readonly IMapper _mapper;
 
         public UserController(IConfiguration config,
                               UserManager<User> userManager,
-                              SignInManager<User> signInManager,            
+                              SignInManager<User> signInManager,
                               IMapper mapper)
         {
             this.config = config;
             this.userManager = userManager;
             this.signInManager = signInManager;
-            this._mapper = mapper;            
+            this._mapper = mapper;
         }
 
 
@@ -43,7 +43,7 @@ namespace ProAgil.API.Controllers
         public async Task<IActionResult> GetUser(UserDto user)
         {
             try
-            {                
+            {
                 return Ok(user);
             }
             catch (System.Exception ex)
@@ -56,11 +56,22 @@ namespace ProAgil.API.Controllers
         public async Task<IActionResult> Login(UserLoginDto userLogin)
         {
             try
-            {                
+            {
                 var user = await this.userManager.FindByNameAsync(userLogin.UserName);
-                    
+                var result = await this.signInManager.CheckPasswordSignInAsync(user, userLogin.Password, false);
 
+                if (result.Succeeded)
+                {
+                    var appUser = await this.userManager.Users
+                                    .FirstOrDefaultAsync(u => u.NormalizedUserName == userLogin.UserName.ToUpper());
 
+                    var userToReturn = this._mapper.Map<UserLoginDto>(appUser);
+
+                    return Ok(new {
+                        
+                    });
+
+                }
             }
             catch (System.Exception ex)
             {
@@ -73,7 +84,7 @@ namespace ProAgil.API.Controllers
         public async Task<IActionResult> Register(UserDto user)
         {
             try
-            { 
+            {
                 var usu = _mapper.Map<User>(user);
                 var result = await this.userManager.CreateAsync(usu, user.Password);
                 var userToReturn = _mapper.Map<UserDto>(usu);
@@ -82,7 +93,7 @@ namespace ProAgil.API.Controllers
                 {
                     return Created("GetUser", userToReturn);
                 }
-                return BadRequest(result.Errors);         
+                return BadRequest(result.Errors);
             }
             catch (System.Exception ex)
             {
