@@ -15,6 +15,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Identity;
 using ProAgil.Domain.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace ProAgil.API.Controllers
 {
@@ -68,10 +73,12 @@ namespace ProAgil.API.Controllers
                     var userToReturn = this._mapper.Map<UserLoginDto>(appUser);
 
                     return Ok(new {
-                        
+                        token = GenerateJWToken(appUser).Result,
+                        user = userToReturn
                     });
-
                 }
+
+                return Unauthorized();
             }
             catch (System.Exception ex)
             {
@@ -100,5 +107,37 @@ namespace ProAgil.API.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Erro API - " + ex.Message);
             }
         }
+
+        private async Task<string> GenerateJWToken(User user)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.UserName)
+            };
+
+            var roles = await this.userManager.GetRolesAsync(user);
+
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            var key = new SymmetricSecurityKey(Encoding.ASCII
+                    .GetBytes(this.config.GetSection("AppSettings:token").Value));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var tokenDescripter = new SecurityTokenDescriptor{
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.Now.AddDays(1),
+                SigningCredentials = creds
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescripter);
+
+            return tokenHandler.WriteToken(token);
+        }   
+
     }
 }
