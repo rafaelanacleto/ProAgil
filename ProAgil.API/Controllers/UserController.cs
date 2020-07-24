@@ -45,11 +45,12 @@ namespace ProAgil.API.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetUser(UserDto user)
+        [AllowAnonymous]
+        public async Task<IActionResult> GetUser()
         {
             try
             {
-                return Ok(user);
+                return Ok(new UserDto());
             }
             catch (System.Exception ex)
             {
@@ -57,7 +58,8 @@ namespace ProAgil.API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("Login")]      
+        [AllowAnonymous]  
         public async Task<IActionResult> Login(UserLoginDto userLogin)
         {
             try
@@ -123,10 +125,9 @@ namespace ProAgil.API.Controllers
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
 
-            var key = new SymmetricSecurityKey(Encoding.ASCII
-                    .GetBytes(this.config.GetSection("AppSettings:token").Value));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-
+            var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(this.config.GetSection("AppSettings:Token").Value));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            
             var tokenDescripter = new SecurityTokenDescriptor{
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(1),
