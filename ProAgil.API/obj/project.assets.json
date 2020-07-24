@@ -4942,19 +4942,19 @@
     ]
   },
   "packageFolders": {
-    "/home/rafael/.nuget/packages/": {}
+    "C:\\Users\\rafae\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rafael/Documentos/projetos/ProAgil/ProAgil.API/ProAgil.API.csproj",
+      "projectUniqueName": "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
       "projectName": "ProAgil.API",
-      "projectPath": "/home/rafael/Documentos/projetos/ProAgil/ProAgil.API/ProAgil.API.csproj",
-      "packagesPath": "/home/rafael/.nuget/packages/",
-      "outputPath": "/home/rafael/Documentos/projetos/ProAgil/ProAgil.API/obj/",
+      "projectPath": "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
+      "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+      "outputPath": "C:\\repos\\ProAgil\\ProAgil.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/rafael/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -4965,11 +4965,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/home/rafael/Documentos/projetos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj": {
-              "projectPath": "/home/rafael/Documentos/projetos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj"
+            "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+              "projectPath": "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
             },
-            "/home/rafael/Documentos/projetos/ProAgil/ProAgil.Repository/ProAgil.Repository.csproj": {
-              "projectPath": "/home/rafael/Documentos/projetos/ProAgil/ProAgil.Repository/ProAgil.Repository.csproj"
+            "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
+              "projectPath": "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
             }
           }
         }
@@ -5052,7 +5052,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

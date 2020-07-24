@@ -45,7 +45,6 @@ namespace ProAgil.API.Controllers
 
 
         [HttpGet]
-        [AllowAnonymous]
         public async Task<IActionResult> GetUser()
         {
             try
@@ -126,7 +125,7 @@ namespace ProAgil.API.Controllers
             }
 
             var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(this.config.GetSection("AppSettings:Token").Value));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
             
             var tokenDescripter = new SecurityTokenDescriptor{
                 Subject = new ClaimsIdentity(claims),
