@@ -20,11 +20,11 @@ export class EventosComponent implements OnInit {
   eventos: Eventos[];
   evento: Eventos;
   eventosFiltrados: Eventos[];
-  mostrarImagem: boolean = false;
+  mostrarImagem = false;
   _filtroList: string;
   registerForm: FormGroup;
   bodyDeletarEvento = '';
-  modoSalvar = "put";
+  modoSalvar = 'put';
   file: File;
   fileNameToUpdate: string;
   dataAtual: string;
@@ -50,20 +50,20 @@ export class EventosComponent implements OnInit {
 
   openModal(template: any) {
     this.registerForm.reset();
-    this.modoSalvar = "";
+    this.modoSalvar = '';
     template.show();
   }
 
   novoEvento(template: any) {
     this.openModal(template);
-    this.modoSalvar = "post";
+    this.modoSalvar = 'post';
 
   }
 
   editaTelaEvento(evento: Eventos, template: any) {
 
     this.openModal(template);
-    this.modoSalvar = "put";
+    this.modoSalvar = 'put';
     this.evento = Object.assign({}, evento);
     this.fileNameToUpdate = evento.imagemUrl.toString();
     this.evento.imagemUrl = '';
@@ -176,7 +176,6 @@ export class EventosComponent implements OnInit {
   }
 
   onFileChange(event) {
-    
     const reader = new FileReader();
     if (event.target.files) {
       this.file = event.target.files;
