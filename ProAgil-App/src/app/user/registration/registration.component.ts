@@ -45,9 +45,11 @@ export class RegistrationComponent implements OnInit {
   }
 
   cadastrarUsuario() {
-    console.log('cadastrar user');
+    if (this.registerForm.valid) {
+
+      
+      
+    }
   }
-
-
 
 }
