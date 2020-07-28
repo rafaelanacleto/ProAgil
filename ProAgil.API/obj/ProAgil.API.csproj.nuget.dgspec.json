@@ -10,16 +10,24 @@
         "projectUniqueName": "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
         "projectName": "ProAgil.API",
         "projectPath": "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
-        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\rafael.anacleto\\.nuget\\packages\\",
         "outputPath": "C:\\repos\\ProAgil\\ProAgil.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\rafael.anacleto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.herval.com.br/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -122,16 +130,24 @@
         "projectUniqueName": "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
         "projectName": "ProAgil.Domain",
         "projectPath": "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
-        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\rafael.anacleto\\.nuget\\packages\\",
         "outputPath": "C:\\repos\\ProAgil\\ProAgil.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\rafael.anacleto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.herval.com.br/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -187,16 +203,24 @@
         "projectUniqueName": "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
         "projectName": "ProAgil.Repository",
         "projectPath": "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
-        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\rafael.anacleto\\.nuget\\packages\\",
         "outputPath": "C:\\repos\\ProAgil\\ProAgil.Repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\rafael.anacleto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.herval.com.br/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
