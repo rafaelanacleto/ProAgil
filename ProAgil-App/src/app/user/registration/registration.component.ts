@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/_models/User';
 import { AuthService } from 'src/app/_services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -17,7 +18,8 @@ export class RegistrationComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -53,7 +55,8 @@ export class RegistrationComponent implements OnInit {
       this.user = Object.assign({password: this.registerForm.get('passwords.password').value}, this.registerForm.value);
       this.authService.register(this.user).subscribe(
         () => {
-
+            this.router.navigate(['/user/login']);
+            this.toastr.success("Cadastrado com Sucesso", "Login");
         },
         error => {
           
