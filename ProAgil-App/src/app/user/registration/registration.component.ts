@@ -59,7 +59,18 @@ export class RegistrationComponent implements OnInit {
             this.toastr.success("Cadastrado com Sucesso", "Login");
         },
         error => {
-          
+         const erro = error.error;
+         erro.forEach(element => {
+           switch (element.code) {
+             case 'DuplicateUserName':
+              this.toastr.error("Cadastro Duplicado email cadastrado", "Cadastro");
+               break;
+           
+             default:
+              this.toastr.error(`Erro no Cadastro. CODE: ${element.code}`, "Cadastro");
+               break;
+           }
+         }); 
         }
       );            
     }
