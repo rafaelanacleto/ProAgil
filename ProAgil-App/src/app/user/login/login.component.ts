@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.model).subscribe(
       () => {
         this.router.navigate(['/dashboard/']); 
-        this.toastr.success("Seja Bem Vindo!! Rafael ", "Login");
+        this.toastr.success("Seja Bem Vindo!", "Login");
       },
       error => {
         this.toastr.error("Erro ao fazer login! CODE: 0x2344");
