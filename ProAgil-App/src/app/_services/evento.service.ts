@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Eventos } from '../_models/Eventos';
 
@@ -10,11 +10,14 @@ export class EventoService {
   
   eventos: Object;
   baseURL = 'http://localhost:5000/eventos';
+  tokenHeader: HttpHeaders;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.tokenHeader = new HttpHeaders({ 'Authorization': `Bearer ${localStorage.getItem('token')}`});
+  }
 
   getAllEvento():Observable<Eventos[]> {    
-    return this.http.get<Eventos[]>(this.baseURL);
+    return this.http.get<Eventos[]>(this.baseURL, {headers: this.tokenHeader });
   }
 
   getEventoByTema(tema: string):Observable<Eventos[]> {    
