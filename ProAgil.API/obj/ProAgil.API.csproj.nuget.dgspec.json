@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {}
+    "c:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {}
   },
   "projects": {
-    "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {
+    "c:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
+        "projectUniqueName": "c:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
         "projectName": "ProAgil.API",
-        "projectPath": "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
+        "projectPath": "c:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
         "packagesPath": "C:\\Users\\rafael.anacleto\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\ProAgil\\ProAgil.API\\obj\\",
+        "outputPath": "c:\\repos\\ProAgil\\ProAgil.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -27,17 +27,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.herval.com.br/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
-                "projectPath": "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
+              "c:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+                "projectPath": "c:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
               },
-              "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
-                "projectPath": "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
+              "c:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
+                "projectPath": "c:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
               }
             }
           }
@@ -124,14 +123,14 @@
         }
       }
     },
-    "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+    "c:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
+        "projectUniqueName": "c:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
         "projectName": "ProAgil.Domain",
-        "projectPath": "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
+        "projectPath": "c:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
         "packagesPath": "C:\\Users\\rafael.anacleto\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\ProAgil\\ProAgil.Domain\\obj\\",
+        "outputPath": "c:\\repos\\ProAgil\\ProAgil.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -147,7 +146,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.herval.com.br/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -197,14 +195,14 @@
         }
       }
     },
-    "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
+    "c:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
+        "projectUniqueName": "c:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
         "projectName": "ProAgil.Repository",
-        "projectPath": "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
+        "projectPath": "c:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
         "packagesPath": "C:\\Users\\rafael.anacleto\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\ProAgil\\ProAgil.Repository\\obj\\",
+        "outputPath": "c:\\repos\\ProAgil\\ProAgil.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -220,14 +218,13 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://nuget.herval.com.br/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
-                "projectPath": "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
+              "c:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+                "projectPath": "c:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
               }
             }
           }
@@ -243,11 +240,11 @@
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.4, )"
+              "version": "[3.1.7, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.4, )"
+              "version": "[3.1.7, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
