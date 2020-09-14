@@ -14442,7 +14442,7 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 800
+    "CSharpLanguageVersion": 900
   },
   "RootNamespace": "ProAgil.API",
   "Documents": [],

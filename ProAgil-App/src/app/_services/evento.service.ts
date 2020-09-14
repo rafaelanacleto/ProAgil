@@ -21,23 +21,23 @@ export class EventoService {
   }
 
   getEventoByTema(tema: string):Observable<Eventos[]> {    
-    return this.http.get<Eventos[]>(`${this.baseURL}/getByTema/${tema}`);
+    return this.http.get<Eventos[]>(`${this.baseURL}/getByTema/${tema}`, {headers: this.tokenHeader });
   }
 
   getEventoById(id: number):Observable<Eventos> {    
-    return this.http.get<Eventos>(`${this.baseURL}/${id}`);
+    return this.http.get<Eventos>(`${this.baseURL}/${id}`, {headers: this.tokenHeader });
   }
 
   postEvento(evento: Eventos) {    
-    return this.http.post(this.baseURL, evento );
+    return this.http.post(this.baseURL, evento, {headers: this.tokenHeader } );
   }
 
   putEvento(evento: Eventos) {
-    return this.http.put(`${this.baseURL}/${evento.id}`, evento);
+    return this.http.put(`${this.baseURL}/${evento.id}`, evento, {headers: this.tokenHeader });
   }
 
   deleteEvento(idEvento: number) {
-    return this.http.delete(`${this.baseURL}/${idEvento}`);
+    return this.http.delete(`${this.baseURL}/${idEvento}`, {headers: this.tokenHeader });
   }
 
   postUpload(file: File, name: string) {
@@ -45,7 +45,7 @@ export class EventoService {
     const formData = new FormData();
     formData.append('file', fileToUplaod, name);
 
-    return this.http.post(`${this.baseURL}/upload`, formData);
+    return this.http.post(`${this.baseURL}/upload`, formData, {headers: this.tokenHeader });
   } 
   
 }
