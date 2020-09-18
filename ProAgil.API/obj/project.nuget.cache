@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kB6JRXcI6dbJedwuhmZGz7QvZfHw84gtmV7R0PZk8h4JmL16+ZydqPDIc0yXAWD+jC1VOGGMpUl0Avj83gyp8w==",
+  "dgSpecHash": "3E/QCwkrDtvwRn96MqG04M0TW5aMvpnhHl1LUvZC0Inj1V6feMUqLu8rr0ojMhqi97dCgprcBuSCgmWS5woO/w==",
   "success": true,
-  "projectFilePath": "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
+  "projectFilePath": "c:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rafael.anacleto\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\rafael.anacleto\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
