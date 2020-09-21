@@ -21,11 +21,13 @@ import { TituloComponent } from './_shared/titulo/titulo.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
+import { EventoEditComponent } from "./eventos/eventoEdit/eventoEdit.component";
 
 @NgModule({
    declarations: [
       AppComponent,
       EventosComponent,
+      EventoEditComponent,
       NavComponent,
       DateTimeFormatPipePipe,
       PalestrantesComponent,

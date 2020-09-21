@@ -4949,11 +4949,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
+      "projectUniqueName": "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
       "projectName": "ProAgil.API",
-      "projectPath": "c:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
+      "projectPath": "C:\\repos\\ProAgil\\ProAgil.API\\ProAgil.API.csproj",
       "packagesPath": "C:\\Users\\rafael.anacleto\\.nuget\\packages\\",
-      "outputPath": "c:\\repos\\ProAgil\\ProAgil.API\\obj\\",
+      "outputPath": "C:\\repos\\ProAgil\\ProAgil.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -4975,11 +4975,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
-              "projectPath": "c:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
+            "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+              "projectPath": "C:\\repos\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
             },
-            "c:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
-              "projectPath": "c:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
+            "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
+              "projectPath": "C:\\repos\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
             }
           }
         }
