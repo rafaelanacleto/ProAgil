@@ -49,20 +49,20 @@ namespace ProAgil.API.Controllers
         public async Task<IActionResult> upload()
         {
             try
-            {   
+            {
                 var file = Request.Form.Files[0];
-                var folderName = Path.Combine("Resources","Images");               
+                var folderName = Path.Combine("Resources", "Images");
                 var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
-                
+
                 if (file.Length > 0)
                 {
                     var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
                     var fullPath = Path.Combine(pathToSave, fileName.Replace("\"", " ").Trim());
 
-                     using(var stream = new FileStream(fullPath, FileMode.Create))   
-                     {
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
                         file.CopyTo(stream);
-                     }
+                    }
 
                 }
 
@@ -135,14 +135,27 @@ namespace ProAgil.API.Controllers
             try
             {
                 var evento = await Context.GetAllEventoAsyncById(EventoId, false);
+                if (evento == null) return NotFound();
 
-                if (evento == null)
-                {
-                    return NotFound();
-                }
+                var idLotes = new List<int>();
+                var idRedesSociais = new List<int>();
+
+                model.Lotes.ForEach(item => idLotes.Add(item.Id));
+                model.RedesSociais.ForEach(item => idRedesSociais.Add(item.Id));
+
+                var lotes = evento.Lotes.Where(
+                    lote => !idLotes.Contains(lote.Id)
+                ).ToArray();
+
+                var redesSociais = evento.RedesSociais.Where(
+                    rede => !idLotes.Contains(rede.Id)
+                ).ToArray();
+
+                if (lotes.Length > 0) Context.DeleteRange(lotes);
+                if (redesSociais.Length > 0) Context.DeleteRange(redesSociais);
 
                 _mapper.Map(model, evento);
-                Context.Update(evento);               
+                Context.Update(evento);
 
                 if (await Context.SaveChangesAsync())
                 {

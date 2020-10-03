@@ -23,8 +23,9 @@ login(model: any) {
       map((response: any) => {
         const user = response;
         if (user) {
-          localStorage.setItem('token', user.token);
+          localStorage.setItem('token', user.token);          
           this.decodeToken = this.jwtHelper.decodeToken(user.token);
+          sessionStorage.setItem('username', this.decodeToken.unique_name);
         }
       })
     );

@@ -28,6 +28,11 @@ namespace ProAgil.Repository
             _context.Remove(entity);
         }
 
+        public void DeleteRange<T>(T[] entityArray) where T : class
+        {
+            _context.RemoveRange(entityArray);
+        }
+
         public async Task<Evento[]> GetAllEventoAsync(bool includePalestrante = false)
         {
             IQueryable<Evento> query = _context.Eventos

@@ -1,4 +1,4 @@
-<app-titulo title="Eventos"></app-titulo>
+<app-titulo [titulo]="titulo"></app-titulo>
 <div class="container-fluid">
     <div class="row">
         <form action="">
@@ -61,14 +61,14 @@
             </button>
                     </td>
                     <td>
-                        <a [routerLink]="['/evento', 'evento.id', 'edit']" tooltip="Edição Detalhada" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                        <a [routerLink]="['/evento', evento.id, 'edit']" tooltip="Edição Detalhada" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
                     </td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
-                    <td>
-                        <h6>Total: 5</h6>
+                    <td *ngIf="eventos && eventos.length">
+                        <h6>Total: {{eventos.length}}</h6>
                     </td>
                 </tr>
             </tfoot>
@@ -125,7 +125,7 @@
                                         <tr>
                                             <td>
                                                 <button class="btn btn-outline-info" (click)="file.click()">Carregar Imagem</button>
-                                                <input type="file" #file class="form-control file-upload" (change)="onFileChange($event)" [ngClass]="{'is-invalid': registerForm.get('imagemUrl').errors && registerForm.get('imagemUrl').touched}" formControlName="imagemUrl" style="display: none;">
+                                                <input type="file" #file class="form-control file-upload" (change)="onFileChange($event)" [ngClass]="{'is-invalid': registerForm.get('imagemURL').errors && registerForm.get('imagemURL').touched}" formControlName="imagemURL" style="display: none;">
                                             </td>
                                             <td>
                                                 {{file.name}}

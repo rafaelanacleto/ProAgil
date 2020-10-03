@@ -4,11 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { EventoService } from './_services/evento.service';
 import { AppComponent } from './app.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { NavComponent } from './nav/nav.component';
 import { DateTimeFormatPipePipe } from './_helps/DateTimeFormatPipe.pipe';
-import { EventoService } from './_services/evento.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -22,6 +22,9 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { EventoEditComponent } from "./eventos/eventoEdit/eventoEdit.component";
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { NgxMaskModule } from 'ngx-mask';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 @NgModule({
    declarations: [
@@ -43,12 +46,15 @@ import { EventoEditComponent } from "./eventos/eventoEdit/eventoEdit.component";
       AppRoutingModule,
       BrowserAnimationsModule,
       HttpClientModule,
-      ReactiveFormsModule,
+      ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
       FormsModule,
+      NgxCurrencyModule,
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
       TooltipModule.forRoot(),
       ModalModule.forRoot(),
+      TabsModule.forRoot(),
+      NgxMaskModule.forRoot(),
       ToastrModule.forRoot()// ToastrModuleadded
    ],
    providers: [

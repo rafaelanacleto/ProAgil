@@ -18,6 +18,7 @@ defineLocale('pt-br', ptBrLocale);
 export class EventosComponent implements OnInit {
 
   eventos: Eventos[];
+  titulo = "Evento";
   evento: Eventos;
   eventosFiltrados: Eventos[];
   mostrarImagem = false;
@@ -65,8 +66,8 @@ export class EventosComponent implements OnInit {
     this.openModal(template);
     this.modoSalvar = 'put';
     this.evento = Object.assign({}, evento);
-    this.fileNameToUpdate = evento.imagemUrl.toString();
-    this.evento.imagemUrl = '';
+    this.fileNameToUpdate = evento.imagemURL.toString();
+    this.evento.imagemURL = '';
     this.registerForm.patchValue(this.evento);
   }
 
@@ -91,8 +92,8 @@ export class EventosComponent implements OnInit {
 
   uploadImagem() {
     if (this.modoSalvar === 'post') {
-      const nomeArquivo = this.evento.imagemUrl.split('\\', 3);
-      this.evento.imagemUrl = nomeArquivo[2];
+      const nomeArquivo = this.evento.imagemURL.split('\\', 3);
+      this.evento.imagemURL = nomeArquivo[2];
 
       this.eventoService.postUpload(this.file, nomeArquivo[2])
         .subscribe(
@@ -102,7 +103,7 @@ export class EventosComponent implements OnInit {
           }
         );
     } else {
-      this.evento.imagemUrl = this.fileNameToUpdate;
+      this.evento.imagemURL = this.fileNameToUpdate;
       this.eventoService.postUpload(this.file, this.fileNameToUpdate)
         .subscribe(
           () => {
@@ -152,7 +153,7 @@ export class EventosComponent implements OnInit {
       tema: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
       local: ['', Validators.required],
       dataEvento: ['', Validators.required],
-      imagemUrl: ['', Validators.required],
+      imagemURL: ['', Validators.required],
       qtdPessoas: ['', [Validators.required, Validators.max(120000)]],
       telefone: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
@@ -189,7 +190,7 @@ export class EventosComponent implements OnInit {
       (_eventos: Eventos[]) => {
         this.eventos = _eventos;
         this.eventosFiltrados = this.eventos;
-        console.log(this.eventos);
+        //console.log(this.eventos);
       }, error => {
         this.toastr.error(`Erro ao tentar Carregar eventos: ${error}`);
       });
