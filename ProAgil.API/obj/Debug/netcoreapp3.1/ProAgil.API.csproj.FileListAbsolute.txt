@@ -286,7 +286,6 @@
 C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\appsettings.json
 C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\package-lock.json
-C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.API.exe
 C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.API.deps.json
 C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.API.runtimeconfig.json
@@ -364,7 +363,6 @@ C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.Domain.dll
 C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.Repository.dll
 C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.Domain.pdb
 C:\repos\ProAgil\ProAgil.API\bin\Debug\netcoreapp3.1\ProAgil.Repository.pdb
-C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.csprojAssemblyReference.cache
 C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.AssemblyInfoInputs.cache
 C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.AssemblyInfo.cs
 C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.csproj.CoreCompileInputs.cache
@@ -373,7 +371,8 @@ C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.MvcApplicationP
 C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.RazorTargetAssemblyInfo.cache
 C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.csproj.CopyComplete
 C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\staticwebassets\ProAgil.API.StaticWebAssets.Manifest.cache
-C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\staticwebassets\ProAgil.API.StaticWebAssets.xml
 C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.dll
 C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.pdb
 C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.genruntimeconfig.cache
+C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.csproj.AssemblyReference.cache
+C:\repos\ProAgil\ProAgil.API\obj\Debug\netcoreapp3.1\ProAgil.API.GeneratedMSBuildEditorConfig.editorconfig
