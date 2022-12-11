@@ -4964,6 +4964,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj": {
               "projectPath": "/home/rafael/Documentos/repos/ProAgil/ProAgil.Domain/ProAgil.Domain.csproj"
@@ -4982,6 +4983,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
@@ -5052,7 +5054,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+>>>>>>> 756ed964c70b80c7480f0bb98eb890d1ea1bae0a
       }
     }
   }
